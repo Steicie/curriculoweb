@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#c8a95d;
+    line-height: 1.6;
+    padding: 20px;
+      background-image: url("fundo3.jpg"); /* Caminho da imagem */
+    background-size: cover;         /* Cobre toda a tela */
+    background-position: center;    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+}
+
+header {
+    text-align: center;
+    padding: 30px 10px;
+
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+
+header h1 {
+    font-size: 2rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background:#1f2d24;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+ul {
+    margin-left: 20px;
+    list-style: disc;
+}
+
+a {
+    color: #2c2c2c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+header {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 30px 10px;
+    background-color:#1f2d24;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Imagem */
+header figure {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+header figure img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #c8a95d;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto ao lado da imagem */
+.header-text {
+    text-align: left;
+    flex: 1;
+}
+
+/* Responsivo: empilha em telas pequenas */
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+}
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.box {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.box a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.box:hover .icon {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.box span {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Cores personalizadas */
+.whatsapp { background-color: #25D366; }
+.linkedin { background-color: #0A66C2; }
+.mail     { background-color: #D44638; }
+.github   { background-color: #333; }
