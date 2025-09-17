@@ -15,9 +15,11 @@ body {
 header {
     text-align: center;
     padding: 30px 10px;
-
+      background-image: url("main.jpeg"); /* Caminho da imagem */
+    background-size: cover;         /* Cobre toda a tela */
+    background-position: center;    /* Centraliza a imagem */
+    background-repeat: no-repeat;
     border-radius: 8px;
-    margin-bottom: 30px;
 }
 
 
@@ -29,10 +31,11 @@ main {
     max-width: 800px;
     padding: 20px 30px;
     border-radius: 10px;
-    background-image: url('main.jpeg'); /* Caminho da imagem */
-    background-size: cover;         /* Cobre toda a tela */
-    background-position: center;    /* Centraliza a imagem */
-    background-repeat: no-repeat;
+     margin: 0 auto;
+    background:#1f2d24;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 
