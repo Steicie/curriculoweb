@@ -28,10 +28,9 @@ header h1 {
 
 main {
     max-width: 800px;
-    margin: 0 auto;
     padding: 20px 30px;
     border-radius: 10px;
-    background-image: url(main.jpeg); /* Caminho da imagem */
+    background-image: url('main.jpeg'); /* Caminho da imagem */
     background-size: cover;         /* Cobre toda a tela */
     background-position: center;    /* Centraliza a imagem */
     background-repeat: no-repeat;
