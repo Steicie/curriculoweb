@@ -1,4 +1,7 @@
-*{
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,38 +9,15 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #f3e2c6;
+    color:#f6f6f6;
     line-height: 1.6;
     padding: 20px;
-    background-color: #f3e2c6;
-}
-
-header {
-    text-align: center;
-    padding: 30px 10px;
-    background-image: url('main.jpeg'); /* Caminho da imagem */
-    background-size: cover;         /* Cobre toda a tela */
-    background-position: center;    /* Centraliza a imagem */
+    background-image: url('fundo.jpg'); /* Caminho da imagem de fundo */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    border-radius: 8px;
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
 }
-
-
-header h1 {
-    font-size: 2rem;
-}
-
-main {
-    max-width: 800px;
-    padding: 20px 30px;
-    border-radius: 10px;
-    margin: 0 auto;
-    background:#1f2d24;
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
 
 ul {
     margin-left: 20px;
@@ -45,7 +25,7 @@ ul {
 }
 
 a {
-    color:#f3e2c6;
+    color: #e2e2e2;
     text-decoration: none;
 }
 
@@ -53,31 +33,25 @@ a:hover {
     text-decoration: underline;
 }
 
-footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
+/* ==========================================================================
+   2. CABEÇALHO (HEADER) - Imagem na Esquerda, Nome na Direita
+   ========================================================================== */
 header {
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    padding: 30px 10px;
-    background-color:#1f2d24;
+    gap: 90px;
+    justify-content: space-between; /* Afasta a foto para a esquerda e o h1 para a direita */
+    align-items: center;            /* Alinha ambos na mesma altura vertical */
+     padding: 30px 190px; 
+    background-color: #fd4f4f7f;
     border-radius: 8px;
     margin-bottom: 30px;
 }
 
-.header-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: 800px;
-    width: 100%;
+header h1 {
+    font-size: 2rem;
+    text-align: right; /* Alinha o texto do título para o lado direito */
 }
 
-/* Imagem */
 header figure {
     margin: 0;
     flex-shrink: 0;
@@ -87,30 +61,38 @@ header figure img {
     width: 120px;
     height: 120px;
     object-fit: cover;
-    border-radius: 50%;
+
     border: 3px solid #c8a95d;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Texto ao lado da imagem */
-.header-text {
-    text-align: left;
-    flex: 1;
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL (MAIN) E RODAPÉ (FOOTER)
+   ========================================================================== */
+main {
+    max-width: 800px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin: 0 auto;
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight(400 900);
+    font-style: normal;
+    font-variation-settings:"width" 100;
+    background-color: #1f2d2461;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
 }
 
-/* Responsivo: empilha em telas pequenas */
-@media (max-width: 600px) {
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .header-text {
-        text-align: center;
-    }
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
+/* ==========================================================================
+   4. SEÇÃO DE REDES SOCIAIS / ÍCONES
+   ========================================================================== */
 .icons-container {
     display: flex;
     justify-content: center;
@@ -157,8 +139,114 @@ header figure img {
     color: #333;
 }
 
+/* Cores de fundo das redes sociais */
 .whatsapp { background-color: green; }
 .linkedin { background-color: #0A66C2; }
 .mail { background-color: #D44638; }
 .github { background-color: #333; }
 
+/* ==========================================================================
+   5. RESPONSIVIDADE (Telas menores de 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* Empilha a imagem em cima do título no celular */
+        gap: 15px;
+        text-align: center;
+    }
+
+    header h1 {
+        text-align: center; /* Centraliza o título no celular */
+    }
+}
+
+
+
+header h1.name {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: right;
+    
+    /* Configuração do Quadro */
+    border: 4px solid #ffffff;
+    padding: 10px 25px;
+    border-radius: 4px; /* Cantos levemente arredondados igual ao logo */
+
+    /* Ativa a animação chamada "piscarNeon" para rodar para sempre (infinite) */
+    animation: piscarNeon 2s infinite alternate ease-in-out;
+}
+
+@keyframes piscarNeon {
+    /* Estado 1: Brilho forte e completo */
+    0% {
+        text-shadow: 
+            0 0 4px #fff, 
+            0 0 10px #fff, 
+            0 0 18px #ff007f, 
+            0 0 30px #ff007f, 
+            0 0 40px #ff007f;
+        box-shadow: 
+            0 0 4px #fff,
+            inset 0 0 4px #fff,
+            0 0 15px #ff007f,
+            inset 0 0 15px #ff007f;
+    }
+    /* Estado 2: Brilho reduzido (efeito oscilante de energia) */
+    100% {
+        text-shadow: 
+            0 0 2px #fff, 
+            0 0 4px #fff, 
+            0 0 10px #ff007f, 
+            0 0 15px #ff007f;
+        box-shadow: 
+            0 0 2px #fff,
+            inset 0 0 2px #fff,
+            0 0 8px #ff007f,
+            inset 0 0 8px #ff007f;
+        opacity: 0.95; /* Suave oscilação na opacidade geral */
+    }
+}
+
+
+@keyframes piscarNeon {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        /* Copie as sombras fortes aqui para manter ligado */
+        text-shadow: 0 0 4px #fff, 0 0 18px #ff007f;
+        box-shadow: 0 0 4px #fff, inset 0 0 4px #fff, 0 0 15px #ff007f, inset 0 0 15px #ff007f;
+    }
+    20%, 24%, 55% {
+        /* Desliga momentaneamente as sombras e apaga */
+        text-shadow: none;
+        box-shadow: none;
+        opacity: 0.3;
+    }
+}
+
+
+header h1.name {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff; /* Letras brancas no centro igual ao logo */
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Espaçamento entre as letras */
+    text-align: right;
+
+    /* Efeito de Brilho Neon Rosa (Camadas de sombras) */
+    text-shadow: 
+        0 0 5px #fff, 
+        0 0 10px #fff, 
+        0 0 20px #ff007f, 
+        0 0 30px #ff007f, 
+        0 0 40px #ff007f, 
+        0 0 55px #ff007f, 
+        0 0 75px #ff007f;
+}
+
+h2{
+    color: #ff007f;
+}
